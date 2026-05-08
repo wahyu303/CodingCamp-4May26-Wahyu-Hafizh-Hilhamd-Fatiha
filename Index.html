@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusSpace — Productivity Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar" aria-label="Main Navigation">
+      <header class="sidebar__brand">
+        <figure class="sidebar__logo" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="18" fill="url(#brandGrad)" />
+            <path d="M12 18 L18 12 L24 18 L18 24 Z" fill="white" opacity="0.9" />
+            <circle cx="18" cy="18" r="4" fill="white" />
+            <defs>
+              <linearGradient id="brandGrad" x1="0" y1="0" x2="36" y2="36">
+                <stop offset="0%" stop-color="#7c6bff" />
+                <stop offset="100%" stop-color="#4f8bff" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </figure>
+        <span class="sidebar__brand-name">FocusSpace</span>
+      </header>
+
+      <nav class="sidebar__nav" aria-label="Primary">
+        <ul class="nav__list" role="list">
+          <li class="nav__item">
+            <button class="nav__btn nav__btn--active" data-section="dashboard" aria-current="page">
+              <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+              Dashboard
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__btn" data-section="tasks">
+              <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+              </svg>
+              Tasks
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__btn" data-section="timer">
+              <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              Timer
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__btn" data-section="links">
+              <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+              </svg>
+              Links
+            </button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__btn" data-section="settings">
+              <svg class="nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"
+                />
+              </svg>
+              Settings
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <footer class="sidebar__footer">
+        <label class="theme-toggle" for="themeSwitch" aria-label="Toggle dark/light mode">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+          <span class="theme-toggle__label">Dark Mode</span>
+          <input type="checkbox" id="themeSwitch" class="theme-toggle__input" checked aria-label="Dark mode" />
+          <span class="theme-toggle__track" aria-hidden="true"></span>
+        </label>
+
+        <address class="sidebar__profile" rel="author">
+          <figure class="profile__avatar" aria-hidden="true">H</figure>
+          <section class="profile__info">
+            <strong class="profile__name">Hacing</strong>
+            <small class="profile__status">Stay focused!</small>
+          </section>
+        </address>
+      </footer>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="main-content" id="main-content">
+      <!-- HERO / GREETING HEADER -->
+      <header class="dashboard-header" aria-label="Dashboard greeting">
+        <section class="dashboard-header__text">
+          <h1 class="dashboard-header__greeting">Good Evening, <mark class="accent">Hacing</mark> 👋</h1>
+          <p class="dashboard-header__subtitle">Stay focused and make progress every day.</p>
+        </section>
+        <time class="dashboard-header__clock" id="clockDisplay" datetime="" aria-live="polite">
+          <strong class="clock__time" id="clockTime">00:00 AM</strong>
+          <span class="clock__date" id="clockDate">Loading...</span>
+        </time>
+        <figure class="dashboard-header__scenery" aria-hidden="true">
+          <span class="scenery__moon"></span>
+          <span class="scenery__stars"></span>
+        </figure>
+      </header>
+
+      <!-- WIDGETS GRID -->
+      <section class="widgets-grid" aria-label="Productivity Widgets">
+        <!-- FOCUS TIMER WIDGET -->
+        <article class="widget widget--timer" aria-labelledby="timerHeading">
+          <header class="widget__header">
+            <h2 class="widget__title" id="timerHeading">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              Focus Timer
+            </h2>
+          </header>
+
+          <figure class="timer-ring" aria-hidden="true">
+            <svg class="timer-ring__svg" viewBox="0 0 200 200">
+              <circle class="timer-ring__track" cx="100" cy="100" r="85" />
+              <circle class="timer-ring__progress" id="timerProgress" cx="100" cy="100" r="85" />
+            </svg>
+            <output class="timer-ring__display" id="timerDisplay" aria-live="polite" aria-label="Timer countdown">25:00</output>
+            <figcaption class="timer-ring__label" id="timerLabel">🎯 Let's focus!</figcaption>
+          </figure>
+
+          <nav class="timer__controls" aria-label="Timer controls">
+            <button class="btn btn--primary" id="timerStart" aria-label="Start timer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21" /></svg>
+              Start
+            </button>
+            <button class="btn btn--ghost" id="timerPause" aria-label="Pause timer" disabled>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+              </svg>
+              Pause
+            </button>
+            <button class="btn btn--ghost" id="timerReset" aria-label="Reset timer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="1,4 1,10 7,10" />
+                <path d="M3.51 15a9 9 0 102.13-9.36L1 10" />
+              </svg>
+              Reset
+            </button>
+          </nav>
+        </article>
+
+        <!-- TO-DO LIST WIDGET -->
+        <article class="widget widget--tasks" aria-labelledby="tasksHeading">
+          <header class="widget__header">
+            <h2 class="widget__title" id="tasksHeading">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+              </svg>
+              To-Do List
+            </h2>
+            <button class="btn btn--add" id="openAddTask" aria-label="Add new task">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              Add Task
+            </button>
+          </header>
+
+          <form class="task-input-form" id="taskInputForm" role="search" aria-label="Add task">
+            <label for="taskInput" class="sr-only">What do you want to do?</label>
+            <input type="text" id="taskInput" class="task-input" placeholder="What do you want to do?" autocomplete="off" />
+            <button type="submit" class="btn btn--submit" aria-label="Submit task">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12,5 19,12 12,19" />
+              </svg>
+            </button>
+          </form>
+
+          <ul class="task-list" id="taskList" role="list" aria-label="Task items" aria-live="polite"></ul>
+        </article>
+
+        <!-- QUICK LINKS WIDGET -->
+        <article class="widget widget--links" aria-labelledby="linksHeading">
+          <header class="widget__header">
+            <h2 class="widget__title" id="linksHeading">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+              </svg>
+              Quick Links
+            </h2>
+            <button class="btn btn--add" id="openAddLink" aria-label="Add new link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              Add Link
+            </button>
+          </header>
+
+          <ul class="links-list" id="linksList" role="list" aria-label="Quick links" aria-live="polite"></ul>
+
+          <footer class="widget__footer">
+            <button class="btn btn--text" id="manageLinks">Manage Links</button>
+          </footer>
+        </article>
+      </section>
+
+      <!-- MOTIVATIONAL QUOTE -->
+      <aside class="quote-banner" aria-label="Motivational quote">
+        <figure class="quote-banner__icon" aria-hidden="true">✦</figure>
+        <blockquote class="quote-banner__text" id="quoteText">Discipline is choosing between what you want now and what you want most.</blockquote>
+        <figure class="quote-banner__illustration" aria-hidden="true">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="20" r="12" fill="#7c6bff" opacity="0.8" />
+            <rect x="25" y="34" width="30" height="28" rx="6" fill="#4f8bff" opacity="0.7" />
+            <rect x="15" y="46" width="12" height="16" rx="3" fill="#7c6bff" opacity="0.5" />
+            <rect x="53" y="46" width="12" height="16" rx="3" fill="#7c6bff" opacity="0.5" />
+            <rect x="30" y="62" width="8" height="14" rx="3" fill="#4f8bff" opacity="0.6" />
+            <rect x="42" y="62" width="8" height="14" rx="3" fill="#4f8bff" opacity="0.6" />
+          </svg>
+        </figure>
+      </aside>
+    </main>
+
+    <!-- ===================== MODALS ===================== -->
+
+    <!-- Edit Task Modal -->
+    <dialog class="modal" id="editTaskModal" aria-labelledby="editTaskTitle" aria-modal="true">
+      <article class="modal__card">
+        <header class="modal__header">
+          <h3 class="modal__title" id="editTaskTitle">Edit Task</h3>
+          <button class="modal__close" id="closeEditModal" aria-label="Close modal">&times;</button>
+        </header>
+        <section class="modal__body">
+          <label for="editTaskInput" class="form-label">Task</label>
+          <input type="text" id="editTaskInput" class="form-input" placeholder="Enter task name" />
+          <input type="hidden" id="editTaskId" />
+        </section>
+        <footer class="modal__footer">
+          <button class="btn btn--ghost" id="cancelEdit">Cancel</button>
+          <button class="btn btn--danger" id="deleteEditTask">Delete</button>
+          <button class="btn btn--primary" id="saveEdit">Save Changes</button>
+        </footer>
+      </article>
+    </dialog>
+
+    <!-- Add Link Modal -->
+    <dialog class="modal" id="addLinkModal" aria-labelledby="addLinkTitle" aria-modal="true">
+      <article class="modal__card">
+        <header class="modal__header">
+          <h3 class="modal__title" id="addLinkTitle">Add New Link</h3>
+          <button class="modal__close" id="closeAddLinkModal" aria-label="Close modal">&times;</button>
+        </header>
+        <section class="modal__body">
+          <label for="linkNameInput" class="form-label">Name</label>
+          <input type="text" id="linkNameInput" class="form-input" placeholder="e.g. Twitter" />
+          <label for="linkUrlInput" class="form-label">URL</label>
+          <input type="url" id="linkUrlInput" class="form-input" placeholder="https://twitter.com" />
+        </section>
+        <footer class="modal__footer">
+          <button class="btn btn--ghost" id="cancelAddLink">Cancel</button>
+          <button class="btn btn--primary" id="saveLink">Add Link</button>
+        </footer>
+      </article>
+    </dialog>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
